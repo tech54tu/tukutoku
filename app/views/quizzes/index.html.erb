@@ -1,0 +1,26 @@
+<div class="card bg-dark text-white mb-3">
+  <img class="card-img" src="https://photosku.com/img/005.jpg" alt="Card image">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Tuku Toku とは</h5>
+    <p class="card-text">クイズをツクる・トクことを目的にしたWebアプリケーションです</p>
+  </div>
+</div>
+
+<%= link_to 'クイズを作る', new_quiz_path, class: "btn btn-primary btn-lg active mb-3"%>
+
+<% @quizzes.each do |quiz|%>
+  <div class="card mb-3" style="max-width: 800px;">
+    <div class="row no-gutters">
+      <div class="col-md-2" style="max-width: 400px;">
+        <img src="<%= quiz.image %>" class="card-img" alt="...">
+      </div>
+      <div class="col-md-10">
+        <div class="card-body">
+          <h5 class="card-title"><%= quiz.title %></h5>
+          <p class="card-text"><%= quiz.description %></p>
+          <p class="card-text"><small class="text-muted"><%= quiz.created_at %></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
