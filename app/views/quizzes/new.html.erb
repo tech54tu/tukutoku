@@ -1,31 +1,33 @@
-<%= form_tag(quizzes_path, method: :post) do %>
+<%= form_for(@quiz, url: quizzes_path) do |f| %>
   <h4>クイズについて</h4>
 
   <div class="form-group">
-    <label for="title">タイトル</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="クイズのタイトルを入力してください。">
+    <%= f.label :title, "タイトル"%>
+    <%= f.text_field :title, class: "form-control", id: "title", placeholder: "クイズのタイトルを入力してください。" %>
   </div>
 
   <div class="form-group">
-    <label for="description">説明</label>
-    <input type="text" class="form-control" id="description" name="description" placeholder="クイズの説明文を入力してください。">
+    <%= f.label :description, "説明" %>
+    <%= f.text_field :description, class: "form-control", id: "description",  placeholder: "クイズの説明文を入力してください。" %>
   </div>
 
   <div class="form-group">
-    <label for="image">画像</label>
-    <input type="text" class="form-control" id="image" name="image" placeholder="画像のURLを入力してください。">
+    <%= f.label :image, "画像" %>
+    <%= f.text_field :image, class: "form-control", id: "image", placeholder: "画像のURLを入力してください。" %>
   </div>
 
   <h4>問題をツクる</h4>
 
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <div class="input-group-text">
-        <input type="checkbox" aria-label="Checkbox for following text input">
-      </div>
-    </div>
-    <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="クイズの問題文を入力してください。">
-  </div>
+  <%# <%= f.fields_for :question do |i| %>
+    <%# <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="checkbox" aria-label="Checkbox for following text input" name="answer">
+        </div>
+      </div> %>
+      <%# <%= i.text_field :question, class: "form-control", placeholder: "クイズの問題文を入力してください。" %>
+    <%# </div> %>
+  <%# <% end %>
 
   <div>
     ※ 問題の答えが○の場合は、左のチェックボックスにチェックを入れてください。
@@ -35,5 +37,6 @@
     ＋ 問題を増やす
   </div>
 
-  <input class="btn btn-primary" type="submit" value="ツクる">
+  <%# <input class="btn btn-primary" type="submit" value="ツクる"> %>
+  <%= f.submit class: "btn btn-primary", value: "ツクる" %>
 <% end %>
