@@ -1,0 +1,17 @@
+<h4>クイズをトク</h4>
+<p>※ 問題の答えが○の場合は、左のチェックボックスにチェックを入れてください。</p>
+
+<% @questions.each do |question| %>
+  <div class="input-group mb-3" data-question_id = <%= question[:id] %>>
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input type="checkbox" aria-label="Checkbox for following text input">
+      </div>
+    </div>
+    <div class="form-control">
+      <%= question[:quistion] %>
+    </div>
+  </div>
+<% end %>
+
+<input class="btn btn-primary" type="submit" value="採点する">
