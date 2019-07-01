@@ -13,6 +13,11 @@ class QuizzesController < ApplicationController
     redirect_to quizzes_path(@quiz)
   end
 
+  def show
+    @quiz      = Quiz.find(params[:id])
+    @questions = @quiz.questions
+  end
+
   private
   def quiz_params
     params.require(:quiz).permit(:title, :description, :image, questions_attributes: [:id, :quistion, :answer])
