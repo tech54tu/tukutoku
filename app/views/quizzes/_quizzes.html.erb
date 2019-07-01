@@ -1,0 +1,18 @@
+<% @quizzes.each do |quiz|%>
+  <div class="card mb-3">
+    <div class="row no-gutters align-items-center">
+      <div class="col-md-2">
+        <img src="<%= quiz.image %>" class="card-img" alt="...">
+      </div>
+      <div class="col-md-10">
+        <div class="card-body">
+          <h5 class="card-title"><%= quiz.title %></h5>
+          <p class="card-text"><%= quiz.description %></p>
+          <p class="card-text"><small class="text-muted"><%= quiz.created_at %></small></p>
+          <%# <input class="btn btn-primary" type="submit" value="クイズをトク"> %>
+          <%= link_to 'クイズをトク', quiz_path(quiz.id), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
