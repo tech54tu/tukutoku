@@ -1,5 +1,5 @@
 class Quiz < ApplicationRecord
-  # belongs_to :user
   has_many   :questions
   accepts_nested_attributes_for :questions
+  belongs_to :user
 end
