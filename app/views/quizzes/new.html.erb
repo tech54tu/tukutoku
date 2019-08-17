@@ -1,0 +1,73 @@
+<%= form_for(@quiz, url: quizzes_path) do |f| %>
+  <h4>クイズについて</h4>
+
+  <div class="form-group">
+    <%= f.label :title, "タイトル"%>
+    <%= f.text_field :title, class: "form-control", id: "title", placeholder: "クイズのタイトルを入力してください。" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description, "説明" %>
+    <%= f.text_field :description, class: "form-control", id: "description",  placeholder: "クイズの説明文を入力してください。" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image, "画像" %>
+    <%= f.text_field :image, class: "form-control", id: "image", placeholder: "画像のURLを入力してください。" %>
+  </div>
+
+  <div>
+    <h4>○×問題をツクる</h4>
+    <p>※ 問題の答えが○の場合は、左のチェックボックスにチェックを入れてください。</p>
+  </div>
+
+  <%= f.fields_for :questions do |q| %>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <%= q.check_box :answer, aria:{label: "Checkbox for following text input"} %>
+        </div>
+      </div>
+      <%= q.text_field :quistion, class: "form-control", placeholder: "クイズの問題文を入力してください。" %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :questions do |q| %>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <%= q.check_box :answer, aria:{label: "Checkbox for following text input"} %>
+        </div>
+      </div>
+      <%= q.text_field :quistion, class: "form-control", placeholder: "クイズの問題文を入力してください。" %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :questions do |q| %>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <%= q.check_box :answer, aria:{label: "Checkbox for following text input"} %>
+        </div>
+      </div>
+      <%= q.text_field :quistion, class: "form-control", placeholder: "クイズの問題文を入力してください。" %>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :questions do |q| %>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <%= q.check_box :answer, aria:{label: "Checkbox for following text input"} %>
+        </div>
+      </div>
+      <%= q.text_field :quistion, class: "form-control", placeholder: "クイズの問題文を入力してください。" %>
+    </div>
+  <% end %>
+
+  <div>
+    ＋ 問題を増やす
+  </div>
+
+  <%= f.submit class: "btn btn-primary", value: "ツクる" %>
+<% end %>
