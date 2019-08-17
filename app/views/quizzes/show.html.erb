@@ -1,7 +1,7 @@
 <h4>クイズをトク</h4>
 <p>※ 問題の答えが○の場合は、左のチェックボックスに<br>×の場合は右にチェックを入れてください。</p>
 
-<form name="judge">
+<form name="judge" class="judge">
   <% @questions.each do |question| %>
     <div class="input-group mb-3" data-question_id = <%= question[:id] %>>
       <div class="input-group-prepend">
