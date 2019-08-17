@@ -14,8 +14,12 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @quiz      = Quiz.find(params[:id])
-    @questions = @quiz.questions
+    @quiz         = Quiz.find(params[:id])
+    @questions    = @quiz.questions
+    gon.questions = @quiz.questions
+    # gon.questions.each do |qa|
+    #   qa[:answer]
+    # end
   end
 
   def destroy

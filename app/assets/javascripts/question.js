@@ -30,22 +30,30 @@
 
 function clickBtn1(){
   const user_answers     = [];
-  const question_answers = ["○", "○", "○", "○"];
+  const question_answers = [];
+  const check = document.judge.check;
+  
+  gon.questions.forEach(question => {
+    question_answers.push(question.answer);
+  });
   console.log(question_answers);
-	const check = document.judge.check;
 
 	for (let i = 0; i < check.length; i++){
 		if(check[i].checked){
       user_answers.push(check[i].value);
 		}
 	}
+
   document.getElementById("user-answer").textContent = user_answers;
+
   console.log(user_answers);
 
   var isEqual = true;
   for (var i = 0; i < user_answers.length; i++) {
       if (user_answers[i] !== question_answers[i]) {
-           isEqual = false;
+        isEqual = false;
+      }else if(user_answers[i] == question_answers[i]) {
+        isEqual = true;
       }
       console.log( isEqual );
   }
