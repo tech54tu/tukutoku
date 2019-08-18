@@ -1,7 +1,7 @@
 # README
-* Ruby version
-* System dependencies
-* Configuration
+こちらのURLから、ご覧いただけます。
+http://3.114.48.154/
+
 # 制作目的
 - 知識のインプット・アウトプット用にオリジナルの問題集を作成したかったため。
 # 特徴
@@ -37,10 +37,4 @@
 |answer  |integer   |                 |
 |quiz_id |references|foreign_key: true|
 ###Association
-- belongs_to :item
-- commentのようにitemsにネストさせる
-* Database initialization
-* How to run the test suite
-* Services (job queues, cache servers, search engines, etc.)
-* Deployment instructions
-* ...
+  belongs_to :quiz
