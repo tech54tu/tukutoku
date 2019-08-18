@@ -13,38 +13,41 @@
         </div>
       </div>
       <div class="form-control">
-        <%= question[:quistion] %>
+        <%= question[:question] %>
       </div>
     </div>
   <% end %>
 </form>
 
 <input class="btn btn-primary" type="button" value="回答する" onclick="clickBtn1()"/>
-<div id="result">
+
+<%# <div id="result">
+  <p>正誤判定 <span id="judge-answer"></span></p>
   <p>あなたの回答 <span id="user-answer"></span></p>
-</div>
+  <p>問題の解答   <span id="question-answer"></span></p>
+</div> %>
 
-<%# <input class="btn btn-primary" type="button" value="正解を見る" id="answer-button">
-<div>
-  <p>正解は・・・
-    <span id="question_answer" hidden> %>
-      <%# <% @questions.each do |qa| %>
-        <%# <%= qa[:answer] %>
-      <%# <% end %>
-    <%# </span>
-  </p>
-<%# </div> %>
+<table>
+  <tr>
+    <td>正誤判定</td>
+    <td><span id="judge-answer"></span></td>
+  </tr>
+  <tr>
+    <td>あなたの回答</td>
+    <td><span id="user-answer"></span></td>
+  </tr>
+  <tr>
+    <td>問題の解答</td>
+    <td><span id="question-answer"></td>
+  </tr>
+</table>
 
-<div class="hidden_box">
-    <label for="label1">正解を見る</label>
-    <input type="checkbox" id="label1" class="btn btn-primary"/>
-    <p>正解は・・・
-    <div class="hidden_show">
-      <!--非表示ここから-->     
-      <% @questions.each do |qa| %>
-        <%= qa[:answer] %>
-      <% end %>
-      <!--ここまで-->
-    </div>
-    </p>
-</div>
+<style>
+table {
+	border-collapse: collapse;
+}
+td {
+	border: solid 1px;
+	padding: 0.5em;
+}
+</style>

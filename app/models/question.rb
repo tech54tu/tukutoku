@@ -1,6 +1,5 @@
 class Question < ApplicationRecord
   belongs_to :quiz
-  belongs_to :user
-
-  enum answer: ['○', '×']
+  validates :question, presence: true
+  enum answer: [:×, :○]
 end

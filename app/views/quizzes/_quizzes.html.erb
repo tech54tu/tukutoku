@@ -11,7 +11,7 @@
           <p class="card-text"><small class="text-muted"><%= quiz.created_at %></small></p>
           <%# <input class="btn btn-primary" type="submit" value="クイズをトク"> %>
           <%= link_to 'クイズをトク', quiz_path(quiz.id), class: "btn btn-primary" %>
-          <%= link_to '編集', quiz_path(quiz.id), class: "btn btn-primary" %>
+          <%= link_to '編集', edit_quiz_path(quiz.id), class: "btn btn-primary" %>
           <%= link_to '削除', quiz_path(quiz.id), method: :delete, class: "btn btn-primary" %>
         </div>
       </div>
