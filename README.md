@@ -36,5 +36,5 @@ http://3.114.48.154/
 |question|text      |null: false      |
 |answer  |integer   |                 |
 |quiz_id |references|foreign_key: true|
-###Association
-  belongs_to :quiz
+### Association
+- belongs_to :quiz
