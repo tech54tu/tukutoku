@@ -17,9 +17,9 @@ class QuizzesController < ApplicationController
     @quiz         = Quiz.find(params[:id])
     @questions    = @quiz.questions
     gon.questions = @quiz.questions
-    # gon.questions.each do |qa|
-    #   qa[:answer]
-    # end
+  end
+
+  def edit
   end
 
   def destroy
@@ -30,6 +30,6 @@ class QuizzesController < ApplicationController
 
   private
   def quiz_params
-    params.require(:quiz).permit(:title, :description, :image, questions_attributes: [:id, :quistion, :answer])
+    params.require(:quiz).permit(:title, :description, :image, questions_attributes: [:id, :question, :answer]).merge(user_id: current_user.id)
   end
 end
