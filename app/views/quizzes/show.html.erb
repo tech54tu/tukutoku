@@ -21,30 +21,7 @@
 
 <input class="btn btn-primary" type="button" value="回答する" onclick="clickBtn1()"/>
 <div id="result">
+  <p>正誤判定 <span id="judge-answer"></span></p>
   <p>あなたの回答 <span id="user-answer"></span></p>
-</div>
-
-<%# <input class="btn btn-primary" type="button" value="正解を見る" id="answer-button">
-<div>
-  <p>正解は・・・
-    <span id="question_answer" hidden> %>
-      <%# <% @questions.each do |qa| %>
-        <%# <%= qa[:answer] %>
-      <%# <% end %>
-    <%# </span>
-  </p>
-<%# </div> %>
-
-<div class="hidden_box">
-    <label for="label1">正解を見る</label>
-    <input type="checkbox" id="label1" class="btn btn-primary"/>
-    <p>正解は・・・
-    <div class="hidden_show">
-      <!--非表示ここから-->     
-      <% @questions.each do |qa| %>
-        <%= qa[:answer] %>
-      <% end %>
-      <!--ここまで-->
-    </div>
-    </p>
+  <p>問題の解答   <span id="question-answer"></span></p>
 </div>
