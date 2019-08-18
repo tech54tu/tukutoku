@@ -20,8 +20,34 @@
 </form>
 
 <input class="btn btn-primary" type="button" value="回答する" onclick="clickBtn1()"/>
-<div id="result">
+
+<%# <div id="result">
   <p>正誤判定 <span id="judge-answer"></span></p>
   <p>あなたの回答 <span id="user-answer"></span></p>
   <p>問題の解答   <span id="question-answer"></span></p>
-</div>
+</div> %>
+
+<table>
+  <tr>
+    <td>正誤判定</td>
+    <td><span id="judge-answer"></span></td>
+  </tr>
+  <tr>
+    <td>あなたの回答</td>
+    <td><span id="user-answer"></span></td>
+  </tr>
+  <tr>
+    <td>問題の解答</td>
+    <td><span id="question-answer"></td>
+  </tr>
+</table>
+
+<style>
+table {
+	border-collapse: collapse;
+}
+td {
+	border: solid 1px;
+	padding: 0.5em;
+}
+</style>
