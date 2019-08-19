@@ -20,11 +20,18 @@ class QuizzesController < ApplicationController
   end
 
   def edit
+    @quiz = Quiz.find(params[:id])
+  end
+
+  def update
+    quiz = Quiz.find(params[:id])
+    quiz.update(quiz_params) if quiz.user_id == current_user.id
+    redirect_to quizzes_path
   end
 
   def destroy
-    @quiz      = Quiz.find(params[:id])
-    @quiz.destroy
+    quiz = Quiz.find(params[:id])
+    quiz.destroy if quiz.user_id == current_user.id
     redirect_to quizzes_path
   end
 
