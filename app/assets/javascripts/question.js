@@ -2,13 +2,16 @@ function clickBtn1(){
   const user_answers     = [];
   const question_answers = [];
   const judge_answers    = [];
-  const check            = document.judge.check;
+  const check            = document.getElementsByName("check");
 
 // ユーザーの回答を取得
 	for (let i = 0; i < check.length; i++){
 		if(check[i].checked){
-      user_answers.push(check[i].value);
-		}
+      user_answers.push('○');
+    }
+    else {
+      user_answers.push('×');
+    }
 	}
   document.getElementById("user-answer").textContent = user_answers;
 
@@ -23,7 +26,7 @@ function clickBtn1(){
     if (user_answers[i] == question_answers[i]) {
       judge_answers.push('○');
     }
-    else if (user_answers[i] !== question_answers[i]) {
+    else {
       judge_answers.push('×');
     }
   }
