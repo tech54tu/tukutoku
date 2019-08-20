@@ -1,4 +1,6 @@
 class QuizzesController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @quizzes = Quiz.order(id: "DESC")
   end
@@ -38,5 +40,9 @@ class QuizzesController < ApplicationController
   private
   def quiz_params
     params.require(:quiz).permit(:title, :description, :image, questions_attributes: [:id, :question, :answer]).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
