@@ -5,7 +5,9 @@
     <p class="card-text">クイズをツクる・トクことを目的にしたWebアプリケーションです</p>
   </div>
 </div>
-
-<%= link_to 'クイズをツクる', new_quiz_path, class: "btn btn-primary btn-lg active btn-block mb-3"%>
-
+<% if user_signed_in? %>
+  <%= link_to 'クイズをツクる', new_quiz_path, class: "btn btn-primary btn-lg active btn-block mb-3"%>
+<% else %>
+  <%= link_to 'クイズをツクる', new_user_session_path, class: "btn btn-primary btn-lg active btn-block mb-3"%>
+<% end %>
 <%= render partial: "quizzes" %>
