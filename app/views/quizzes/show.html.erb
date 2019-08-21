@@ -1,5 +1,5 @@
 <h4>クイズをトク</h4>
-<p>※ 問題の答えが○の場合は、左のチェックボックスに<br>×の場合は右にチェックを入れてください。</p>
+<p>問題の答えが○の場合は、問題文の左にチェックを入れてください。</p>
 
 <form name="judge" class="judge">
   <% @questions.each do |question| %>
@@ -7,9 +7,6 @@
       <div class="input-group-prepend">
         <div class="input-group-text">
           <input type="checkbox" aria-label="Checkbox for following text input" name="check" value="○">
-        </div>
-        <div class="input-group-text">
-          <input type="checkbox" aria-label="Checkbox for following text input" name="check" value="×">
         </div>
       </div>
       <div class="form-control">
